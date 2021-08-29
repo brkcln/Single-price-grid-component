@@ -1,0 +1,181 @@
+@import url("https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap");
+* {
+	margin: 0;
+	padding: 0;
+	outline: 0;
+	box-sizing: border-box;
+}
+html {
+	height: 100%;
+}
+body {
+	background: #ffffff;
+	color: #ffffff;
+	-webkit-font-smoothing: antialiased;
+	font-size: 1rem;
+	font-family: "Karla", sans-serif;
+	min-height: 100%;
+}
+button {
+	cursor: pointer;
+}
+/* -------------------
+    General
+----------------------*/
+main {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+.container {
+	display: grid;
+	grid-template-columns: 0.5fr 0.5fr;
+	grid-template-rows: 0.5fr 0.5fr;
+	grid-auto-columns: 1fr;
+	gap: 0em 0em;
+	grid-auto-flow: row;
+	justify-content: center;
+	align-content: center;
+	align-items: stretch;
+	grid-template-areas:
+		"hero__main-content hero__main-content"
+		"hero__main-price hero__main-us";
+}
+h1 {
+	margin-bottom: 0.5em;
+	font-size: 2.4rem;
+}
+h2 {
+	margin-bottom: 1em;
+}
+/* -------------------
+    hero section
+----------------------*/
+.hero {
+	box-shadow: 1px 5px 10px rgba(37, 37, 37, 0.596);
+	max-width: 55%;
+	line-height: 1.6;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-ms-border-radius: 5px;
+	-o-border-radius: 5px;
+	margin: auto;
+}
+/* -------------------
+    hero main
+----------------------*/
+.hero__main-content,
+.hero__main-us {
+	padding: 2.5em 0.5em 2.5em 2em;
+}
+.hero__main-content {
+	grid-area: hero__main-content;
+	font-size: 1rem;
+	color: hsl(179, 62%, 43%);
+}
+.hero__main-content p {
+	max-width: 80%;
+}
+.hero__main-content h2 {
+	color: hsl(71, 73%, 54%);
+}
+/* -------------------
+    hero price
+----------------------*/
+.hero__main-price {
+	grid-area: hero__main-price;
+	background-color: hsl(179, 62%, 43%);
+	padding: 2.5em 2em;
+}
+.price__container {
+	display: flex;
+	flex-direction: column;
+}
+.hero__main-price strong {
+	font-size: 2.3rem;
+	font-weight: 700;
+}
+.hero__main-price small {
+	color: hsl(204, 43%, 93%);
+}
+.main__button {
+	max-width: 100%;
+	color: hsl(204, 43%, 93%);
+	background-color: hsl(71, 73%, 54%);
+	box-shadow: 1px 5px 10px rgba(37, 37, 37, 0.596);
+	font-weight: 700;
+	margin-top: 1em;
+	font-size: 1rem;
+	padding: 1em;
+	border: none;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-ms-border-radius: 5px;
+	-o-border-radius: 5px;
+}
+/* -------------------
+    hero us
+----------------------*/
+.hero__main-us {
+	grid-area: hero__main-us;
+	display: flex;
+	flex-direction: column;
+	background-color: hsl(218, 22%, 67%);
+	color: hsl(204, 43%, 93%);
+}
+.hero__main-us p {
+	max-width: 70%;
+	color: hsla(203, 44%, 93%, 0.932);
+}
+/* -------------------
+    Mobile
+----------------------*/
+@media all and (max-width: 878px) {
+	.hero {
+		max-width: 80%;
+		margin-top: 2em;
+	}
+	.container {
+		grid-template-columns: 1fr;
+		grid-template-rows: 1fr;
+		grid-template-areas:
+			"hero__main-content "
+			"hero__main-price "
+			"hero__main-us";
+		align-items: center;
+	}
+	.hero__main-content,
+	.hero__main-us,
+	.hero__main-price {
+		padding: 2em 1.5em;
+		text-align: left;
+	}
+	.hero__main-content p {
+		max-width: 100%;
+	}
+	h1 {
+		margin-bottom: 0;
+		font-size: 2rem;
+	}
+	h2 {
+		margin-bottom: 0.75em;
+	}
+}
+@media all and (max-width: 575px) {
+	.hero {
+		width: 100%;
+	}
+	.hero__main-content,
+	.hero__main-us,
+	.hero__main-price {
+		padding: 1em 0.8em;
+		font-size: 0.85rem;
+	}
+	.main__button {
+		padding: 0.6em;
+		font-size: 0.85.rem;
+	}
+}
